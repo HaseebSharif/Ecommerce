@@ -59,3 +59,15 @@ export const registerUser =  async (req, res) => {
       res.status(500).json(err)
     }
   };
+
+
+  export const LogOut = async(req,res) =>{
+    try{
+        res.clearCookie("accessToken",{
+          sameSite:"none",
+          secure: true
+      }).status(200).send("User has loggedOut")
+          }catch(err){
+              res.send(err)
+          }
+  }
