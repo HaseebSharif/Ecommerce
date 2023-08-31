@@ -6,7 +6,7 @@ export const dbConnection = ()=> {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {
-  console.log('MongoDB connected successfully');
+  console.log('MongoDB Atlas connected successfully');
 }).catch((error) => {
   console.error('MongoDB connection failed:', error);
 });
