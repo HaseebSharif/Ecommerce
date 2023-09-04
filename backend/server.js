@@ -2,12 +2,15 @@ import express from 'express'
 import cors from 'cors';
 import { dbConnection } from './config/dbConnection.js';
 import error from './middlewares/error.js'
+import cookieParser from 'cookie-parser';
+
 
 
 //routes import
 import productRoute from './routes/productRoute.js'
 import userRoute from './routes/userRoute.js'
-import cookieParser from 'cookie-parser';
+import orderRoute from './routes/orderRoute.js'
+
 
 
 const app = express();
@@ -26,6 +29,8 @@ dbConnection();
 
 app.use("/api/product", productRoute);
 app.use("/api/user", userRoute);
+app.use("/api/order", orderRoute);
+
 
 
 
